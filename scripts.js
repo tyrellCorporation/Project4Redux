@@ -47,21 +47,11 @@ function closeModal(modal) {
 
 const audTag = document.getElementsByTagName("audio");
 const organClips = document.getElementsByClassName("organ");
-// const organClips = [ "./assets/synthSting.mp3", "./assets/space-event.mp3", "./assets/space-event2.mp3", "./assets/space-organ.mp3", "./assets/space-organ2.mp3", "./assets/sciFiGloam.wav"]
-// const randomOrgan = organClips[Math.floor(Math.random() * organClips.length)];
 const number = [0, 1, 2, 3, 4, 5];
-let randomNumber = number[Math.floor(Math.random() * number.length)]
 
-
- console.log(number);
- console.log(randomNumber);
-
-
-
-
+console.log(number);
 console.log(audTag);
 console.log(organClips);
-// console.log(randomOrgan);
 
 moodApp.checkboxValue = function (){
     $('input[type=checkbox]').on('click', function(e){
@@ -128,11 +118,10 @@ moodApp.activate = function (){
                 $('.gifContainer').append(`<div style="width:300px;height:400px;padding-bottom:0%;position:relative;"><iframe src="${embedUrl}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`)
         });
         
-        // console.log(randomNumber);
-        // randomNumber();
-        // organClips[`${randomNumber}`].currentTime = 0;
+        let randomNumber = number[Math.floor(Math.random() * number.length)]
+        organClips[`${randomNumber}`].currentTime = 0;
         organClips[`${randomNumber}`].play();
-        // audTag[3].play();
+        console.log(organClips);
         
 
         $('html, body').animate({
