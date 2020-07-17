@@ -1,0 +1,16 @@
+html {
+    font-size: 62.5%;
+    font-family: $primaryFont;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+main h1 {
+    padding-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,141 @@
+//Credit to the https://codepen.io/clkent/pen/dQwGqj
+//Piano key project by Chelsea Kent, for our use of the keyboard template
+.gifContainer {
+    margin: 0;
+    padding: 0;
+    margin-top: -69px;
+    outline: 15px solid $accentColor1;
+    background: black;
+    margin-right: 15px;
+}
+
+.baseMoods {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: -5px;
+}
+
+.sadMoods {
+    margin-top: 0;
+}
+
+.extraFunContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-left: 5px;
+    padding-bottom: 10px;
+}
+
+.extraFunContainer label,
+.extraFunContainer input {
+    margin-top: 0;
+}
+
+.extraSadContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+.keyboardContainer {
+    height: 140px;
+    background-repeat: repeat;
+}
+  
+.accidentalsContainer {
+    width: 446px;
+    display: grid;
+    grid-template-columns: repeat(42, 1fr);
+      height: 50%;
+    justify-items: center;
+    padding-bottom: 2%;   
+    margin: 0 auto;
+    margin-top: 140px;
+}
+  
+.accidentalsContainer button {
+    width: 41px;
+    height: 92px;
+    background: $primaryColor;
+    border: 1px solid $accentColor1;
+    border-radius: 0 0 4px 4px;
+    cursor: pointer;
+    top: -290px;
+    position: relative;
+    z-index: 1;
+    border-top: none;
+}
+  
+.accidentalsContainer button.C {
+    grid-column: 6 / span 2;
+}
+  
+.accidentalsContainer button.D {
+    grid-column: 12 / span 3;
+}
+  
+.accidentalsContainer button.F {
+    grid-column: 26 / span 2;
+}
+  
+.accidentalsContainer button.G {
+    grid-column: 33 / span 2;
+}
+  
+.accidentalsContainer button.A {
+    grid-column: 38 / span 1;
+}
+
+.naturalsContainer {
+    width: 480px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 160px;
+    margin: 0 auto;
+    border: 10px solid $bonusAccentColor;
+}
+  
+.naturalsContainer button {
+    background-image: url(../assets/plastic.jpg);
+    border: 1px solid black;
+    border-radius: 0 0 6px 6px;
+}
+  
+button {
+    cursor: pointer;
+}
+  
+button:active, button:focus {
+    border: 0;
+    outline: rgba(225, 225, 225, 0);
+}
+  
+.naturalsContainer p {
+    font-size: 1.75em;
+    top: 100px;
+    position: relative;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .9), 0 -1px 1px rgba(0, 0, 0, .1);
+    color: #1b1b1e;
+}
+
+.resetButton {
+    color: $secondaryColor;
+    line-height: 0.4;
+    font-size: 12px;
+    align-self: end;
+    margin: 25px;
+    margin-right: 10px;
+    margin-left: 5px;
+    background-color: $bonusAccentColor;
+    border: 2px solid $accentColor1;
+}
+
+.resetButton:active,
+.resetButton:focus {
+    background-color: $bonusAccentColor;
+    border: 2px solid $accentColor1;
+}
+

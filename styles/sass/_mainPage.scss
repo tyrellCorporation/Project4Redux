@@ -1,0 +1,134 @@
+body {
+    background-image: url(../assets/bladerunnerBackground.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body h1 {
+    text-align: center;
+    color: $accentColor1;
+    padding: 0;
+    margin: 0;
+    margin-top: 55px;
+}
+
+main {
+    background-image: url(../assets/graphite.jpg);
+    background-repeat: repeat;
+    margin-top: 15px;
+    border-radius: 25px;
+}
+
+.mainAll {
+    border: 1px solid $bonusAccentColor;
+    background-image: url(../assets/graphite.jpg);
+    background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 950px;
+    border-radius: 25px;
+}
+
+.instructions {
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    background-color: $accentColor2;
+    border: 3px solid $secondaryColor;
+    border-radius: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.instructions:active,
+.instructions:focus {
+    border: 3px solid $secondaryColor;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.instructions p {
+    line-height: 0.4;
+    color: $primaryColor;
+    font-size: 16px;
+    font-family: $primaryFont;
+    font-weight: 900;
+}
+
+.monitorAndMixer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3%;
+    background-repeat: repeat;
+    padding-top: 118px;
+    margin-right: -13px;
+}
+
+.monitorRight {
+    display: flex;
+    flex-direction: column;
+    margin-top: -145px;
+}
+
+.checkboxContainer {
+    background-image: url(.././assets/mixerBack.jpg);
+    height: 161px;
+    width: 480px;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 0;
+    border-radius: 10px;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    margin-top: 15px;
+    font-size: 20px;
+    color: $accentColor1;
+}
+
+.checkbox > input {
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: url(../assets/dials.jpg);
+    background-size: cover;
+    transition: all 1s;
+}
+
+.checkbox > input:checked {
+    transform: rotate(120deg);
+}
+
+.wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.credits p {
+    font-size: 14px;
+    color: $accentColor1;
+    text-align: center;
+    // background-image: url(../assets/graphite.jpg);
+    width: 700px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}

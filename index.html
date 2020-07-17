@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Penfield Mood Organ</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <header class="wrapper">  
+    </header>
+
+    <main class="wrapper">
+        
+        <section class="mainAll">
+
+        <section class="mainTop">
+        <section class="monitorAndMixer">
+
+            <div class="gifContainer" style="width: 300px; height: 400px; display: flex;">
+                <div style="width:100%;height:0;padding-bottom:20%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="300px" height="400px" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+            </div>
+            
+            <div class="monitorRight">
+                <h1>Penfield Mood Organ</h1>
+        <button data-modal-target="#modal" class="instructions"><p>Instructions</p></button>
+
+            <div class="checkboxContainer">
+
+                
+                <div class="baseMoods">
+                    <label for="happy" class="checkbox">
+                        <input type="checkbox" value="happy" name="happy" class="happy">happy</input>
+                    </label>
+                    <label for="sad" class="checkbox">
+                        <input type="checkbox" value="sad" name="sad" class="sad">sad</input>
+                    </label>
+                    
+                    <div class="volumeButton">
+                        <label for="volume" class="checkbox">
+                            <input type="checkbox" value="volume" name="volume" class="volume">Volume</input>
+                        </label>   
+                    </div>
+                    <button class="resetButton"><p>Reset</p></button>
+                    
+                </div>
+                
+
+                <div class="happyMoods hidden">
+                    <div class="extraFunContainer">
+
+                        <label for="excited" class="checkbox">
+                            <input type="checkbox" value="excited" name="excited">excited</input>    
+                        </label>
+                        <label for="cheerful" class="checkbox" id="checkbox">
+                            <input type="checkbox" value="cheerful" name="cheerful">cheerful</input>
+                        </label>
+                        <!-- <label for="humorous" class="checkbox">
+                            <input type="checkbox" value="humorous" name="humorous">humorous</input>
+                        </label> -->
+                        <!-- <label for="whimsical" class="checkbox">
+                            <input type="checkbox" value="whimsical" name="whimsical">whimsical</input>
+                        </label>                -->
+                        <label for="romantic" class="checkbox">
+                            <input type="checkbox" value="romantic" name="romantic">romantic</label>
+                        </label>
+                        <label for="calm" class="checkbox">
+                            <input type="checkbox" value="calm" name="calm">calm</input>
+                        </label>
+                        <!-- <label for="hopeful" class="checkbox">
+                            <input type="checkbox" value="hopeful" name="hopeful">hopeful</input>
+                        </label>                 -->
+                    </div>
+                </div>
+            
+                <div class="sadMoods hidden">
+                    <div class="extraSadContainer">
+                        <label for="gloomy" class="checkbox">
+                            <input type="checkbox" value="gloomy" name="gloomy">gloomy</input>
+                        </label>
+                        <!-- <label for="ominous" class="checkbox">
+                            <input type="checkbox" value="ominous" name="ominous">ominous</input>  
+                        </label> -->
+                        <label for="fear" class="checkbox">
+                            <input type="checkbox" value="fear" name="fear">fear</input>
+                        </label>
+                        <label for="tense" class="checkbox">
+                            <input type="checkbox" value="tense" name="tense">tense</input>
+                        </label>
+                        <label for="lonely" class="checkbox">
+                            <input type="checkbox" value="lonely" name="lonely">lonely</input>
+                        </label>
+                        <!-- <label for="melancholy" class="checkbox">
+                            <input type="checkbox" value="melancholy" name="melancholy">melancholy</input>
+                        </label> -->
+                        <!-- <label for="mysterious" class="checkbox">
+                            <input type="checkbox" value="mysterious" name="mysterious">mysterious</input>
+                        </label> -->
+                    </div>
+                </div>    
+            </div>
+            <div class="keyboardContainer">
+                <div class="naturalsContainer">
+        
+                  <button class="organKey"></button>
+                  <button class="organKey"></button>
+                  <button class="organKey"></button>
+                  <button class="organKey"></button>
+                  <button class="organKey"></button>
+                  <button class="organKey"></button>
+                  <button class="organKey" ></button>
+                </div>
+                <div class="accidentalsContainer">
+                  <button class="organKey, C"></button>
+                  <button class="organKey, D"></button>
+                  <button class="organKey, F"></button>
+                  <button class="organKey, G"></button>
+                  <button class="organKey, A"></button>
+                </div>
+              </div>
+        </div>
+        </section>
+        <section class="credits">
+            <p>Project by Scott Carter and Oliver Kersey</p>
+        </section>
+        </section>
+    </section>
+
+    </main>
+
+
+    <div class="modal active" id="modal">
+        <div class="modal-header">
+            <div class="title">Welcome to the Penfield Mood Organ!</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            The "Penfield Mood Organ" is a device from the seminal science fiction novel <span>"Do Androids Dream of Electric Sheep?"</span> by futurist and sci-fi writer <span>Philip K. Dick.</span> <br><br> With this device, direct your feelings and outlook at your will!  You simply decide which mood you'd like to experience, turn the appropriately labelled dials, and depress any key on the organ's keyboard! It couldn't be any simpler!<br><br>
+
+            If you're wondering, yes, this is indeed the book which was adapted into the cult film <span>Blade Runner!</span>
+            <img src="./assets/philip-k-dick.png" alt="philip k dick profile picture">
+        </div>
+    </div>
+    <div class="active" id="overlay"></div>
+
+<script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+
+<script src="./scripts.js"></script>
+<audio src="./assets/bzzz.mp3" class="audio" preload="auto" type="audio/mpeg"></audio>
+<audio src="./assets/click.mp3" class="audio" preload="auto" type="audio/mpeg"></audio>
+<audio src="./assets/reset.mp3" class="audio" preload="auto" type="audio/mpeg"></audio>
+<audio src="./assets/synthSting.mp3" class="audio organ" preload="auto" type="audio/mpeg"></audio>
+<audio src="./assets/space-event.mp3" class="audio organ" preload="auto" type="audio/mpeg"></audio>
+<audio src="./assets/space-event2.mp3" class="audio organ" preload="auto" type="audio/mpeg"></audio>
+<audio src="./assets/space-organ.mp3" class="audio organ" preload="auto" type="audio/mpeg"></audio>
+<audio src="./assets/space-organ2.mp3" class="audio organ" preload="auto" type="audio/mpeg"></audio>
+<audio src="./assets/sciFiGloam.wav" class="audio organ" preload="auto" type="audio/mpeg"></audio>
+
+</body>
+</html>
