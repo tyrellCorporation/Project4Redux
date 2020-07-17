@@ -46,12 +46,15 @@ function closeModal(modal) {
 
 
 const audTag = document.getElementsByTagName("audio");
-const organClips = document.getElementsByClassName("organ");
-const number = [0, 1, 2, 3, 4, 5];
+const happyClips = document.getElementsByClassName("happy");
+delete happyClips[0];
+const sadClips = document.getElementsByClassName("sad");
+const number = [1, 2, 3];
 
 console.log(number);
 console.log(audTag);
-console.log(organClips);
+console.log(happyClips);
+console.log(sadClips);
 
 moodApp.checkboxValue = function (){
     $('input[type=checkbox]').on('click', function(e){
@@ -116,13 +119,27 @@ moodApp.activate = function (){
         }).then(function(e){
                 const embedUrl = e.data.embed_url;
                 $('.gifContainer').append(`<div style="width:300px;height:400px;padding-bottom:0%;position:relative;"><iframe src="${embedUrl}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`)
-        });
-        
-        let randomNumber = number[Math.floor(Math.random() * number.length)]
-        organClips[`${randomNumber}`].currentTime = 0;
-        organClips[`${randomNumber}`].play();
-        console.log(organClips);
-        
+                
+            });
+
+            let randomNumber = number[Math.floor(Math.random() * number.length)]
+
+            console.log(randomNumber);
+            console.log(finalSelection.secondaryMood);
+            
+            if (finalSelection.secondaryMood == "happy") {
+                happyClips[`${randomNumber}`].currentTime = 0;
+                happyClips[`${randomNumber}`].play();
+            } else if (finalSelection.secondaryMood == "sad") {
+                sadClips[`${randomNumber}`].currentTime = 0;
+                sadClips[`${randomNumber}`].play();           
+            } else if (finalSelection.primaryMood == "happy") {
+                happyClips[`${randomNumber}`].currentTime = 0;
+                happyClips[`${randomNumber}`].play();
+            } else if (finalSelection.primaryMood == "sad") {
+                sadClips[`${randomNumber}`].currentTime = 0;
+                sadClips[`${randomNumber}`].play();  
+            } else audTag[2].play(); 
 
         $('html, body').animate({
             scrollTop: $('html').offset().top
