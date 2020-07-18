@@ -519,6 +519,10 @@ button:active, button:focus {
   border: 2px solid #EC9A29;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-image: url(../assets/bladerunnerBackground.gif);
   background-repeat: no-repeat;
