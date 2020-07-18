@@ -2,7 +2,10 @@ const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById('overlay');
 const moodApp = {};
-
+const audTag = document.getElementsByTagName("audio");
+const happyClips = document.getElementsByClassName("happy");
+const sadClips = document.getElementsByClassName("sad");
+const number = [1, 2, 3];
 const finalSelection = {
     primaryMood: '',
     secondaryMood: ''
@@ -44,54 +47,62 @@ function closeModal(modal) {
     overlay.classList.remove('active')
 }
 
-
-const audTag = document.getElementsByTagName("audio");
-const happyClips = document.getElementsByClassName("happy");
-delete happyClips[0];
-const sadClips = document.getElementsByClassName("sad");
-const number = [1, 2, 3];
-
-console.log(number);
-console.log(audTag);
-console.log(happyClips);
-console.log(sadClips);
-
 moodApp.checkboxValue = function (){
+    // On checkbox click
     $('input[type=checkbox]').on('click', function(e){
+        // if the target of the click has a class of happy
         if (e.target.className === 'happy') {
+            //toggle removal of hidden class to show happy dials
             $('.happyMoods').toggleClass('hidden');
+            //or if target of click is sad
         } else if (e.target.className === 'sad'){
+            //toggle to remove hidden class to show sad dials
             $('.sadMoods').toggleClass('hidden');  
         }
 
+        // If happy dials and sad dials both are not displayed
         if ($('.happyMoods').css('display') == 'none' && $('.sadMoods').css('display') == 'none'){
+            //then don't disable the two main dials
             $('.sad').attr("disabled", false);
             $('.happy').attr("disabled", false);
+            // otherwise if only sad dials are showing, disable the happy dial
         }   else if ($('.happyMoods').css('display') == 'none') {
             $('.happy').attr("disabled", true);
             $('.sad').attr("disabled", false);
+            //or if only the happy dials are showing, disable the sad dial
         } else if ($('.sadMoods').css('display') == 'none'){
             $('.happy').attr("disabled", false);
             $('.sad').attr("disabled", true);
         }
-
-
+        
+        //if clicks when divided in half yield an odd remainder
         if (clicks % 2 === 1){
+            //if this is checked add the value to primaryMood
+
             if(this.checked) {
+                $("." + this.className).not(this).prop("disabled", true);
                 audTag[1].currentTime = 0;
                 audTag[1].play();
-                finalSelection.primaryMood = this.value;             
+                finalSelection.primaryMood = this.value;
+                console.log(finalSelection.primaryMood);     
+                //if this isn't checked delete primaryMood        
             } else if (!this.checked) {
+                $("." + this.className).prop("disabled", false);
                 audTag[1].currentTime = 0
                 audTag[1].play();
                 delete finalSelection.primaryMood;
             }
+            //if checks were an even number
         } else if (clicks % 2 === 0) {
+            //add this value to secondaryMood
             if(this.checked) {
+                $("." + this.className).not(this).prop("disabled", true);
                 audTag[1].currentTime = 0;
                 audTag[1].play();
-                finalSelection.secondaryMood = this.value;             
+                finalSelection.secondaryMood = this.value;  
+                //or if this isn't checked, delete secondaryMood           
             } else if (!this.checked) {
+                $("." + this.className).prop("disabled", false);
                 audTag[1].currentTime = 0
                 audTag[1].play();
                 delete finalSelection.secondaryMood;
@@ -103,6 +114,13 @@ moodApp.checkboxValue = function (){
         clicks++;
     })
 }
+
+function releaseCheckboxes() {
+    if(this.checked) {
+        null;
+    } else {
+        $("." + this.className).prop("disabled", false);
+}};
 
 moodApp.activate = function (){
     $('.keyboardContainer button').on('click', function(){
@@ -123,17 +141,14 @@ moodApp.activate = function (){
             });
 
             let randomNumber = number[Math.floor(Math.random() * number.length)]
-
-            console.log(randomNumber);
-            console.log(finalSelection.secondaryMood);
             
-            if (finalSelection.secondaryMood == "happy") {
+            if (finalSelection.secondaryMood == "happy"||"calm"||"romantic"||"excited"||"cheerful") {
                 happyClips[`${randomNumber}`].currentTime = 0;
                 happyClips[`${randomNumber}`].play();
-            } else if (finalSelection.secondaryMood == "sad") {
+            } else if (finalSelection.secondaryMood == "sad"||"gloomy"||"fear"||"tense"||"lonely") {
                 sadClips[`${randomNumber}`].currentTime = 0;
                 sadClips[`${randomNumber}`].play();           
-            } else if (finalSelection.primaryMood == "happy") {
+            } else if (finalSelection.primaryMood == "happy"||"calm"||"romantic"||"excited"||"cheerful") {
                 happyClips[`${randomNumber}`].currentTime = 0;
                 happyClips[`${randomNumber}`].play();
             } else if (finalSelection.primaryMood == "sad") {
@@ -167,6 +182,9 @@ moodApp.reset = function(){
     $('.sadMoods').addClass('hidden');
     $('.happy').removeAttr("disabled");
     $('.sad').removeAttr("disabled");
+    $('.happy2').removeAttr("disabled");
+    $('.sad2').removeAttr("disabled");
+
     $('input[type=checkbox]').each(function() { 
         this.checked = false; 
         finalSelection.primaryMood = '';
@@ -180,6 +198,7 @@ moodApp.switchReturn = function(){
     ($('.gifContainer').append(`<div style="width:300px;height:400px;padding-bottom:0%;position:relative;"><iframe src="https://giphy.com/embed/1qpQwleotpxXG" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed"></iframe></div>`));
 
     moodApp.reset();
+
     audTag[0].play(); 
 }
 

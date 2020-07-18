@@ -35,10 +35,10 @@
                 
                 <div class="baseMoods">
                     <label for="happy" class="checkbox">
-                        <input type="checkbox" value="happy" name="happy" class="happy">happy</input>
+                        <input type="checkbox" value="happy" name="happy" id="happy" class="happy">happy</input>
                     </label>
                     <label for="sad" class="checkbox">
-                        <input type="checkbox" value="sad" name="sad" class="sad">sad</input>
+                        <input type="checkbox" value="sad" name="sad" id="sad" class="sad">sad</input>
                     </label>
                     
                     <div class="volumeButton">
@@ -55,10 +55,10 @@
                     <div class="extraFunContainer">
 
                         <label for="excited" class="checkbox">
-                            <input type="checkbox" value="excited" name="excited">excited</input>    
+                            <input type="checkbox" value="excited" name="excited" class="happy2" onchange="releaseCheckboxes()">excited</input>    
                         </label>
                         <label for="cheerful" class="checkbox" id="checkbox">
-                            <input type="checkbox" value="cheerful" name="cheerful">cheerful</input>
+                            <input type="checkbox" value="cheerful" name="cheerful" class="happy2" onchange="releaseCheckboxes()">cheerful</input>
                         </label>
                         <!-- <label for="humorous" class="checkbox">
                             <input type="checkbox" value="humorous" name="humorous">humorous</input>
@@ -67,10 +67,10 @@
                             <input type="checkbox" value="whimsical" name="whimsical">whimsical</input>
                         </label>                -->
                         <label for="romantic" class="checkbox">
-                            <input type="checkbox" value="romantic" name="romantic">romantic</label>
+                            <input type="checkbox" value="romantic" name="romantic" class="happy2" onchange="releaseCheckboxes()">romantic</label>
                         </label>
                         <label for="calm" class="checkbox">
-                            <input type="checkbox" value="calm" name="calm">calm</input>
+                            <input type="checkbox" value="calm" name="calm" class="happy2" onchange="releaseCheckboxes()">calm</input>
                         </label>
                         <!-- <label for="hopeful" class="checkbox">
                             <input type="checkbox" value="hopeful" name="hopeful">hopeful</input>
@@ -81,19 +81,19 @@
                 <div class="sadMoods hidden">
                     <div class="extraSadContainer">
                         <label for="gloomy" class="checkbox">
-                            <input type="checkbox" value="gloomy" name="gloomy">gloomy</input>
+                            <input type="checkbox" value="gloomy" name="gloomy" class="sad2" onchange="releaseCheckboxes()">gloomy</input>
                         </label>
                         <!-- <label for="ominous" class="checkbox">
                             <input type="checkbox" value="ominous" name="ominous">ominous</input>  
                         </label> -->
                         <label for="fear" class="checkbox">
-                            <input type="checkbox" value="fear" name="fear">fear</input>
+                            <input type="checkbox" value="fear" name="fear" class="sad2" onchange="releaseCheckboxes()">fear</input>
                         </label>
                         <label for="tense" class="checkbox">
-                            <input type="checkbox" value="tense" name="tense">tense</input>
+                            <input type="checkbox" value="tense" name="tense" class="sad2" onchange="releaseCheckboxes()">tense</input>
                         </label>
                         <label for="lonely" class="checkbox">
-                            <input type="checkbox" value="lonely" name="lonely">lonely</input>
+                            <input type="checkbox" value="lonely" name="lonely" class="sad2" onchange="releaseCheckboxes()">lonely</input>
                         </label>
                         <!-- <label for="melancholy" class="checkbox">
                             <input type="checkbox" value="melancholy" name="melancholy">melancholy</input>

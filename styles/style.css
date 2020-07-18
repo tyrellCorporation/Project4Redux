@@ -535,6 +535,10 @@ body h1 {
   margin-top: 55px;
 }
 
+.noClick {
+  pointer-events: none;
+}
+
 .hideMe {
   display: none;
 }
@@ -564,7 +568,6 @@ main {
           transform: translate(-50%, -50%);
   width: 950px;
   border-radius: 25px;
-  overflow-x: hidden;
 }
 
 .instructions {
