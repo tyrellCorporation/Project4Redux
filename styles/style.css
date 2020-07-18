@@ -562,13 +562,8 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 950px;
   border-radius: 25px;
+  margin-top: 20%;
 }
 
 .instructions {
@@ -706,8 +701,9 @@ main {
   padding-bottom: 10px;
 }
 
-@media (max-width: 950px) {
-  .mainAll {
+@media (max-width: 1020px) {
+  .mainAll,
+  .wrapper {
     width: 850px;
   }
 }
@@ -725,7 +721,8 @@ main {
     margin: 0;
     margin-bottom: -22px;
   }
-  .mainAll {
+  .mainAll,
+  .wrapper {
     width: 525px;
   }
   .monitorAndMixer {
@@ -764,7 +761,7 @@ main {
 @media (max-width: 560px) {
   .mainAll {
     margin-top: 20px;
-    width: 70%;
+    width: 100%;
   }
   .checkboxContainer {
     width: 330px;
@@ -849,7 +846,7 @@ main {
 }
 
 @media (max-width: 525px) {
-  .mainAll {
+  .wrapper {
     width: 80%;
   }
 }
@@ -858,7 +855,7 @@ main {
   .gifContainer {
     outline: 5px solid #EC9A29;
   }
-  .mainAll {
+  .wrapper {
     width: 400px;
     max-width: 95%;
   }
@@ -939,7 +936,7 @@ main {
 }
 
 @media (max-width: 340px) {
-  .mainAll {
+  .wrapper {
     max-width: 97%;
   }
   .credits p {
