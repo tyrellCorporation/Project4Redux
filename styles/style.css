@@ -525,6 +525,7 @@ body {
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
+  overflow-x: hidden;
 }
 
 body h1 {
