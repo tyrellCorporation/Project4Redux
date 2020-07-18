@@ -107,12 +107,14 @@
       font-size: 15px;
   }
 
-  .instructions {
+  .instructions,
+  .instructions:active,
+  .instructions:focus {
       margin-bottom: 11px;
       width: 330px;
       border-radius: 0;
       margin-left: 0px;
-    border: 1px solid $accentColor2;
+      border: 1px solid $accentColor2;
   }
 
     .accidentalsContainer button.A {
