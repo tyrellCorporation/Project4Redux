@@ -11,7 +11,7 @@ const finalSelection = {
     secondaryMood: ''
 }
 
-let clicks = 0;
+let clicks = 1;
 
 
 openModalButtons.forEach(button => {
@@ -74,44 +74,146 @@ moodApp.checkboxValue = function (){
             $('.happy').attr("disabled", false);
             $('.sad').attr("disabled", true);
         }
-        
-        //if clicks when divided in half yield an odd remainder
-        if (clicks % 2 === 1){
-            //if this is checked add the value to primaryMood
+    
+        // this.checked && this is from happy2 class then secondaryMood
+ 
+    //     if (clicks % 2 === 1){
+    //         if(this.checked) {
+    //             $("." + this.className).not(this).prop("disabled", true);
+    //             audTag[1].currentTime = 0;
+    //             audTag[1].play();
+    //             console.log(this)
+
+    //             finalSelection.primaryMood = this.value;
+    //         } else if (!this.checked) {
+    //             $("." + this.className).prop("disabled", false);
+    //             audTag[1].currentTime = 0
+    //             audTag[1].play();
+    //             console.log(this)
+
+    //             delete finalSelection.primaryMood;       
+    //         }
+    //     } else if (clicks % 2 === 0) {
+         
+    //             if(this.checked) {
+    //             $("." + this.className).not(this).prop("disabled", true);
+    //             audTag[1].currentTime = 0;
+    //             audTag[1].play();
+    //             console.log(this)
+
+    //             finalSelection.secondaryMood = this.value;
+                 
+    //         } else if (!this.checked) {
+    //             $("." + this.className).prop("disabled", false);
+    //             audTag[1].currentTime = 0
+    //             audTag[1].play();
+    //             console.log(this)
+    //             delete finalSelection.secondaryMood;
+    //         }
+    //     }   else {
+    //         audTag[1].currentTime = 0;
+    //         audTag[1].play();
+    //     }
+    //     clicks++;
+
+        if (clicks === clicks++) {
 
             if(this.checked) {
                 $("." + this.className).not(this).prop("disabled", true);
                 audTag[1].currentTime = 0;
                 audTag[1].play();
-                finalSelection.primaryMood = this.value;
-                console.log(finalSelection.primaryMood);     
-                //if this isn't checked delete primaryMood        
-            } else if (!this.checked) {
-                $("." + this.className).prop("disabled", false);
-                audTag[1].currentTime = 0
-                audTag[1].play();
-                delete finalSelection.primaryMood;
-            }
-            //if checks were an even number
-        } else if (clicks % 2 === 0) {
-            //add this value to secondaryMood
-            if(this.checked) {
-                $("." + this.className).not(this).prop("disabled", true);
+        } else if(!this.checked) {
+            $("." + this.className).not(this).prop("disabled", false);
                 audTag[1].currentTime = 0;
                 audTag[1].play();
-                finalSelection.secondaryMood = this.value;  
-                //or if this isn't checked, delete secondaryMood           
-            } else if (!this.checked) {
-                $("." + this.className).prop("disabled", false);
-                audTag[1].currentTime = 0
-                audTag[1].play();
-                delete finalSelection.secondaryMood;
-            }
-        }   else {
-            audTag[1].currentTime = 0;
-            audTag[1].play();
+                console.log($(" input.happy "));
         }
-        clicks++;
+
+    //     if ($("input.happy").checked)  {
+    //         finalSelection.primaryMood = "happy";
+    //     } else if ($("input.sad").checked) {
+    //         finalSelection.primaryMood = "sad";
+    //     } else if ( !$("input.happy").checked && !$(input.sad).checked ) {
+    //        delete finalSelection.primaryMood;
+    //     }
+    }
+
+
+        if ( $("input[type='checkbox]").change() && $(!this.checked).hasClass(".happy2")) { 
+
+            // if ((!this.checked).hasClass(".happy2")) {
+                console.log("hiiiiiii guuuuuuuuuuy")
+            } else console.log("nope");
+
+        // };
+    
+        if (this.value == "happy") {
+            delete finalSelection.primaryMood;
+            delete finalSelection.secondaryMood;
+            finalSelection.primaryMood = this.value;
+            console.log(finalSelection);
+        }
+        if (this.value == "sad") {
+            delete finalSelection.primaryMood;
+            delete finalSelection.secondaryMood;
+            finalSelection.primaryMood = this.value;
+            console.log(finalSelection);
+        }
+        
+        if (this.value == "calm") {
+            delete finalSelection.secondaryMood;
+            finalSelection.secondaryMood = this.value;
+            console.log(finalSelection);
+        }
+
+        //I want to have an un-check turn off the secondary mood
+        if (!this.value == "calm") {
+            delete finalSelection.secondaryMood;
+            console.log(finalSelection);
+        }
+
+        if (this.value == "cheerful") {
+            delete finalSelection.secondaryMood;
+            finalSelection.secondaryMood = this.value;
+            console.log(finalSelection);
+        }
+        if (this.value == "excited") {
+            delete finalSelection.secondaryMood;
+            finalSelection.secondaryMood = this.value;
+            console.log(finalSelection);
+        }
+        if (this.value == "romantic") {
+            delete finalSelection.secondaryMood;
+            finalSelection.secondaryMood = this.value;
+            console.log(finalSelection);
+        }
+        if (this.value == "gloomy") {
+            delete finalSelection.secondaryMood;
+            finalSelection.secondaryMood = this.value;
+            console.log(finalSelection);
+        }
+        if (this.value == "fear") {
+            delete finalSelection.secondaryMood;
+            finalSelection.secondaryMood = this.value;
+            console.log(finalSelection);
+        }
+        if (this.value == "tense") {
+            delete finalSelection.secondaryMood;
+            finalSelection.secondaryMood = this.value;
+            console.log(finalSelection);
+        }
+        if (this.value == "lonely") {
+            delete finalSelection.secondaryMood;
+            finalSelection.secondaryMood = this.value;
+            console.log(finalSelection);
+        }
+
+
+        //when it clicks, know the boxes that are checked on the second line
+        //the moods need to be attributed their properties
+
+
+
     })
 }
 
@@ -120,6 +222,7 @@ function releaseCheckboxes() {
         null;
     } else {
         $("." + this.className).prop("disabled", false);
+
 }};
 
 moodApp.activate = function (){
@@ -151,7 +254,7 @@ moodApp.activate = function (){
             } else if (finalSelection.primaryMood == "happy"||"calm"||"romantic"||"excited"||"cheerful") {
                 happyClips[`${randomNumber}`].currentTime = 0;
                 happyClips[`${randomNumber}`].play();
-            } else if (finalSelection.primaryMood == "sad") {
+            } else if (finalSelection.primaryMood == "sad"||"gloomy"||"fear"||"tense"||"lonely") {
                 sadClips[`${randomNumber}`].currentTime = 0;
                 sadClips[`${randomNumber}`].play();  
             } else audTag[2].play(); 
