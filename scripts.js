@@ -120,13 +120,20 @@ moodApp.checkboxValue = function (){
 
             if(this.checked) {
                 $("." + this.className).not(this).prop("disabled", true);
+                // $(this).removeClass("false");
+                // $(this).addClass("true");
                 audTag[1].currentTime = 0;
                 audTag[1].play();
+                console.log(this);
+                console.log("checked")
         } else if(!this.checked) {
             $("." + this.className).not(this).prop("disabled", false);
+                // $(this).removeClass("true");
+                // $(this).addClass("false");
                 audTag[1].currentTime = 0;
                 audTag[1].play();
-                console.log($(" input.happy "));
+                console.log(this);
+                console.log("unchecked")
         }
 
     //     if ($("input.happy").checked)  {
@@ -139,11 +146,28 @@ moodApp.checkboxValue = function (){
     }
 
 
-        if ( $("input[type='checkbox]").change() && $(!this.checked).hasClass(".happy2")) { 
+        // if ( $("input[type='checkbox]").change()) {
 
-            // if ((!this.checked).hasClass(".happy2")) {
-                console.log("hiiiiiii guuuuuuuuuuy")
-            } else console.log("nope");
+
+            // if ($("input[checkbox]") != $("input[checkbox]").attr("checked")) {
+            //     $("input[checkbox]").attr("checked")
+            //     console.log(this)
+            // } else if ($("input[checkbox]") = $("input[checkbox]").attr("checked")) {
+            //     $("input[checkbox]").removeAttr("checked")
+            //     console.log(this)
+            // }
+
+
+        //     if (this.checked = "true") {
+        //         console.log("this is checked");
+        //     } 
+            
+        //     if (  (this.checked = "false") && (this.value === "cheerful")) { 
+
+        //     // if ((!this.checked).hasClass(".happy2")) {
+        //         console.log("hiiiiiii guuuuuuuuuuy")
+        //     } else console.log("nope");
+        //         console.log(this);
 
         // };
     
