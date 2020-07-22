@@ -47,6 +47,11 @@ function closeModal(modal) {
     overlay.classList.remove('active')
 }
 
+$(document).keyup(function(e) {
+    if (e.keyCode === 13) closeModal(modal);     // enter
+    if (e.keyCode === 27) closeModal(modal);   // esc
+  });
+
 moodApp.checkboxValue = function (){
     // On checkbox click
     $('input[type=checkbox]').on('click', function(e){
